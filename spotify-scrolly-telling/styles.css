@@ -1,0 +1,179 @@
+/*Setup Spotify Font*/
+@font-face{
+    font-family: SpotifyBold;
+    src: url("assets/fonts/CircularStd-Black.otf") format("opentype");
+}
+
+@font-face{
+    font-family: SpotifyBook;
+    src: url("assets/fonts/CircularStd-Book.otf") format("opentype");
+}
+
+body { background-color: white; }
+
+h1{ font-family: SpotifyBold; }
+
+h2{ font-family: SpotifyBold;}
+
+text { font-family: SpotifyBook; }
+
+* { font-family: SpotifyBook;}
+
+/*Website Opening Header*/
+.myContainer {
+    margin:auto;
+}
+
+.websiteOpening{
+    width: 100%;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    display: inline-block;
+    background-image:
+            linear-gradient(to bottom, rgba(30, 215, 96, 0.30), rgba(30, 215, 96, 1)),
+            url("assets/mosaicBlurred.png");
+}
+
+.websiteOpening h1{
+    margin-left: 20%;
+    margin-right: 20%;
+    line-height: 1.5em;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    font-size: 80px;
+}
+
+.websiteOpening img{
+    width: 300px;
+    position: relative;
+    top: -5px;
+}
+
+.FirstIntro{
+    width: 600px;
+    height: 240px;
+    margin: 100px auto auto;
+    padding: 10px;
+    background-color: white;
+    opacity: 90%;
+    border-radius: 10px;
+}
+
+/*Grid Layout*/
+.grid {
+    margin: auto auto 200px;
+    width:80%;
+    height: 3500px;
+    padding:10px;
+}
+
+svg {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 3px;
+
+}
+
+.col{
+    position: relative;
+    padding:10px;
+    margin: auto;
+    border: 1px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.trigger{
+    text-align: center;
+}
+
+.col img{
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    transform: rotate(-20deg);
+    width: 50px;
+}
+
+.col select{
+    display: block;
+    margin: 0 auto;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5%;
+    height: 20%;
+    width: 100%;
+}
+
+.row{
+    width:100%;
+    height:100%;
+    margin:auto;
+    background-color: white;
+}
+
+/*Radar Chart Genre Inputs*/
+#genreInput table{
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+}
+
+#genreInput input{
+    width: 100%;
+    background-color: rgba(30, 215, 96, 1);
+    padding-left: 5px;
+    position: relative;
+    top: 3px;
+}
+
+#genreInput input::-moz-range-track {
+    background-color: rgba(30, 215, 96);
+    color: black;
+}
+
+#genreInput button{
+    margin: 0 auto;
+}
+
+
+/*Black Dividers*/
+.Intro{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.Intro h2{
+    margin: auto;
+    width: 600px;
+    color: white;
+}
+
+
+.hidden{
+    opacity: 0;
+}
+
+strong{
+    color:rgba(30, 215, 96, 1)
+}
+
+input[type= range]{
+    width: 100%;
+    height: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Project: Scroll yTelling - CSE 494 - Fall 2022</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            .myContainer {
+                margin:auto;
+            }
+            #chart_div {
+                margin:auto;
+                width:1100px;
+                height:1500px;
+                padding:20px;
+                /* background-color: rgb(190, 191, 192); */
+            }
+            svg {
+                margin:auto;
+                width:100%;
+                height:100%;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+            .col{
+                background-color: white; 
+                padding:10px;
+                margin-bottom: 10px;
+            }
+        
+
+        </style>
+    </head>
+    <body>
+        <div class="myContainer">
+            <h1 class="text-center">Group Project</h1>
+            <h3 class="text-center">ZengKeat Giam - zgiam@asu.edu</h3>
+
+            <div class = "row row-cols-1" id = "chart_div">
+                <div id="bubble_div" class="border border-dark rounded bg-light shadow-sm col">
+                    <svg id="bubble_svg"></svg>
+                </div>
+
+                <div id="line_div" class="border border-dark rounded bg-light shadow-sm col">
+                    <svg id="line_svg"></svg>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>   
+    <script src="main_zeng.js"></script>
+    </html>

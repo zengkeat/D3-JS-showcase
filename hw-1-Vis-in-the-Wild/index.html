@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<title>CSE 494 Homework #1: ZengKeat Giam</title>
+	</head>
+	<style>
+		.container {
+			maxwidth: 970px;
+		}
+		h2, h3, h4, span {
+			text-align: center;
+		}
+		img {
+			width:100%;
+			border: 1px solid gray;
+		}
+		p {
+			text-align: justify;
+			text-justify: inter-word;
+		}
+	</style>
+    <body>
+	    <div class="container">
+			<header>
+				<h2 style=>Homework #1 - Vis in the Wild</h2>
+				<h3>ZengKeat Giam&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;zgiam@asu.edu</h3>
+			</header>
+			<hr>
+			<img src="imgs/Visualizing Global Per Capita CO2 Emissions.png" alt="The cool visualization example that I found!">
+			<hr>
+			<h4>Visualizing Global Per Capita CO2 Emissions</h4>
+			<div style="width:100%;text-align:center;">
+				<a href="https://www.visualcapitalist.com/visualizing-global-per-capita-co2-emissions/" target="_blank">https://www.visualcapitalist.com/visualizing-global-per-capita-co2-emissions/</a></div>
+			<p>
+				<b>Summary:</b> Measuring a country total carbon emission without considered its population doesn't always paint the most accurate image 
+				of their contribution. For example, despite many developing countries like China, India, and Russia are some of the highest emitter of CO2 in the world, 
+				but its per-capital emission is much less than many countries like US, Canada, Europe etc. Thus, looking at the CO2 emission per-capita can add 
+				nuance to the overall story.
+			</p>
+			<ul>
+				<li><b>Domain:</b> Scientist, Entrepreneur, or Organizations working on reduce carbon emession or solving climate change.</li>
+				<li><b>Data:</b> 
+					<ul>
+						<li><b>Domain description:</b> Population of the country or regional, and thier carbon emissions per-capital.</li> 
+						<li><b>Abstraction:</b> 
+							<ul>
+								<li>Dataset type: Tabular</li>
+								<li>Attribute 1: Country, Type: Categorical , Cardinality: Total 33 countries</li>
+								<li>Attribute 2: Region, Type: Categorical , Cardinality: Total 4 Regions</li>
+								<li>Attribute 3: Population, Type: Ordered(Quantitative) , Cardinality: range from 0 to 7.5 billions, 
+									Special Properties: sequential</li>
+								<li>Attribute 4: Carbon Emissions Per Capita of the country or region, Type: Ordered(Quantitative), 
+									Cardinality: range from 0 to 19.5, Special Properties: sequential arrange from max to min</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><b>Task:</b>
+					<ul>
+						<li><b>Domain description:</b> The purpose of this visualization is to paint a fair and accurate 
+							picture of country's carbon emissions by focus on their per-capital emission rather than total emission.</li> 
+					</ul>
+				</li>
+				<li><b>Idiom:</b> The visualization is a bar chart in its core where each bar represent a country/regional; The height (y-axis) represent the CO2 emissions(0 to 20 tonnes per year); and the width (x-axis) represent the population(0 to 7.5 billions).
+					The author clever utilization of graphic, color and chart manipulation into a circular form allow the population and CO2 emissions per-capital of 33 country being see in a glance.</li>
+			</ul>
+			<p>
+				<b>Personal Thoughts</b> I think this is an interesting visualization because of how intuitive and informative it is. The visualization is able to 
+				fit both population and emission per-capital of 33 country without making it complicated and hard to process. I like how it able to show each country
+				population and its emission per-capital both inside one bar/area. And the circular representation not only make the chart much shorter in length, it also make
+				it easier to compare emission per-capital between countries in a glance. 
+			</p>
+		</div>
+	</body>
+</html>

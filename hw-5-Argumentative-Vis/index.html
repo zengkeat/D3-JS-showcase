@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- ZengKeat Giam -->
+<!-- Zgiam@asu.edu -->
+<html lang='en'>
+    <head>
+        <!-- ZengKeat Giam -->
+        <!-- zgiam@asu.edu -->
+        <title>Homework #5: Argumentative Vis - CSE 494 - Fall 2022</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            .myContainer {
+                margin:auto;
+                /* background-color: rgb(190, 191, 192); */
+            }
+            #chart_div {
+                margin:auto;
+                width:2400px;
+                height:1000px;
+                padding:20px;
+                /* background-color: rgb(190, 191, 192); */
+            }
+            svg {
+                margin:auto;
+                width:100%;
+                height:100%;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+
+            .col{
+                background-color: white; 
+                padding:10px;
+                margin: 10px;
+            }
+        
+            #container_div{
+                border:1px solid green;
+                 width: 2500px; 
+                 height: 2300px; 
+                 margin: auto;
+                 padding:15px;
+                background-color: rgb(190, 191, 192);
+            }
+
+            #text_div{
+                margin:auto;
+                padding:20px;
+            }
+
+            span{
+                font-weight: bold;
+            }
+
+            p{
+                font-size: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="myContainer">
+            <h1 class="text-center">Homework #5: Argumentative Vis</h1>
+            <h2 class="text-center">ZengKeat Giam - zgiam@asu.edu</h2>
+
+            <div id= "container_div" class="border border-dark rounded bg-light shadow-sm ">
+                <h1 class="text-center" style="color:black">United State and China - The two most CO2 emitter in the world: </h1>
+                <h2 class="text-center" style="color:black">Who should take more responsibility to reduce the CO2 emission? </h3>
+                <h5 class="text-center" style ="color: blue"> Dataset: https://www.iea.org/data-and-statistics/data-product/greenhouse-gas-emissions-from-energy-highlights</h5>
+                
+                <div id="chart_div" class="row border-dark rounded bg-light shadow-sm ">
+                    <div class = "col">
+                        <svg id="left_chart"></svg>
+                    </div>
+                    <div class = "col" >
+                        <svg id="right_chart"></svg>
+                    </div>
+                </div>
+
+                <div id="text_div" class="row border-dark rounded bg-light shadow-sm ">
+                    <p style="font-size: 35px; color: black"><span style="font-size:40px; color:green">Introduction:</span><br>China and US are the highest producers of CO2 in the world, in total they accounted 
+                        for more than 38% of global CO2 emision in 2019. China emision alone is more than half of that figure. 
+                        Thus, many people bashing China for poluting the world and demand China to take more responsibility on reducing carbon emision. But the situation is far from straightforward - 
+                        measuring a country total carbon emission without considered its population doesn't always paint the most accurate image. 
+                        Therefore, looking at the total CO2 emission of both country VS their per-capita emission can add nuance to the
+                         overall debate of <span>which country should take more responsibility to reduce the CO2 emission.<span>
+
+                    </p>
+                    
+                     <div class = "col border rounded bg-white shadow-sm" style="padding:25px;font-size: 20px;">
+                        <p style="color:blue;font-weight: bold;font-size:30px" ><span>Title</span>: United States vs China Total CO2 Emision From 1971 to 2020</p>
+                        <p><span>Argument</span>:<u> China should take more responsibility on reducing carbon emission than US</u>. 
+                            Especially in recent years(2017- 2020), China emmit almost twice as much as the second most carbon emmiter in the world - United States.
+                            And China alone account around 30% of global emision in 2020. <span>(Hover over the bar to see the value)</span>
+                        </p>
+                        <p><span>Rhetorical techniques</span>:In this chart, I use the rhetorical devices technique of <span style="color: red">biasing</span>
+                            by choosing to stack China on top of United States so that China's CO2 emision look "higher" than it actually is.
+                        </p>            
+                    </div>
+
+                    <div class = "col border rounded bg-white shadow-sm"  style="padding:25px;font-size: 20px;">
+                        <p style="color:blue;font-weight: bold;font-size:30px"><span>Title</span>: United States vs China Per-Capital CO2 Emision From 1971 to 2020</p>
+                        <p><span >Argument</span>: <u>United States should take more responsibility on reducing carbin emision than China.</u>
+                            This is because US per-capital/citizen emmit significantly more CO2 compare to China per-capital/citizen emision for every years; It's the huge population of 
+                            China causing them to be number one carbon emitter. <span>(Hover over the bar to see the value)</span>
+                        </p>
+                        <p><span>Rhetorical techniques</span>: In this chart, I use the the rhetorical devices technique of <span style="color: red">Comparison</span> by using the 
+                            reverse stacking position of left chart so it highlight the contrast of color and bar's height when comparing two chart side-by-side.
+                        </p>
+                    </div>
+
+                    <p  style="font-size: 40px; color: green"><span>Rhetorical techniques use in both chart:</span></p>
+                    <ul  style="font-size: 25px">
+                        <li><span style="font-size: 30px; color: red">Simplication</span>: I choose to use stack bar chart so it is easier for viewers to visualize difference in value of both countries in a glace.</li>
+                        <li><span style="font-size: 30px; color: red">Comparison</span>: I purposely stack China and US in reverse of left and right chart to highlight the contrast between total and per-capital emision.</li>
+                        <li><span style="font-size: 30px; color: red">Interactivity</span>: I had implement hover and tooltips to highlight selected bar and show information of selected bar to the viewers. </li>
+                    </ul>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>   
+    <script src="main.js"></script>
+</html>

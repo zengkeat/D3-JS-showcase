@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- ZengKeat Giam -->
+<!-- Zgiam@asu.edu -->
+<html lang='en'>
+    <head>
+        <!-- ZengKeat Giam -->
+        <!-- zgiam@asu.edu -->
+        <title>Homework #4: D3 Joins - CSE 494 - Fall 2022</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            .myContainer {
+                margin:auto;
+            }
+            #line_div {
+                margin:auto;
+                width:1800px;
+                height:1400px;
+                padding:20px;
+                /* background-color: rgb(190, 191, 192); */
+            }
+            svg {
+                margin:auto;
+                width:100%;
+                height:100%;
+                background-color: white;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+            ul >li {
+                padding:5px;
+            }   
+
+            .col{
+                background-color: white; 
+                padding:10px;
+                margin-bottom: 10px;
+            }
+        
+
+
+        </style>
+    </head>
+    <body>
+        <div class="myContainer">
+            <h1 class="text-center">Homework #4: D3 Joins</h1>
+            <h3 class="text-center">ZengKeat Giam - zgiam@asu.edu</h3>
+
+            <div id="line_div" class="border border-dark rounded bg-light shadow-sm ">
+
+                <div class= "row""  style = "width:100%; height:100%; margin:auto ">
+
+                    <div class = "col-2" style = " margin:auto; height:100%">
+                        <div class = "row row-cols-1" style = "width:100%; height:100%; margin:auto ">
+
+                            <!-- legend -->
+                            <div class = "col">
+                                <label class = "form-label" >Legend: </label>
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#62a87c; "></td>
+                                        <td>South Asia</td>
+                                    </tr>
+                                    <tr> 
+                                        <td style = "border: 1px solid black;background-color:#ffe066; "></td>
+                                        <td>Europe & Central Asia</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#f25c5c; "></td>
+                                        <td>Middle East & North Africa</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#247ba0; "></td>
+                                        <td>Sub-Saharan Africa</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#f4bbd3; "></td>
+                                        <td>Latin America & Caribbean</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#34b9d3; "></td>
+                                        <td>East Asia & Pacific</td>
+                                    </tr>
+                                    <tr>
+                                        <td style = "border: 1px solid black;background-color:#5800FF; "></td>
+                                        <td>North America</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Gloabl Indicator -->
+                            <div class = "col"  >
+                                <label class = "form-label">Gloabl Indicator: </label>
+                                <select class="form-select" id="global_indicator" onchange= "drawLineChart()" style = "width:100%">
+                                    <option selected value = "Data.Health.Birth Rate" >Birth Rate</option>
+                                    <option value = "Data.Health.Death Rate" >Death Rate</option>
+                                    <option value = "Data.Health.Fertility Rate"">Fertility Rate</option>
+                                    <option value = "Data.Health.Life Expectancy at Birth, Female">Female Life Expectancy at Birth</option>
+                                    <option value = "Data.Health.Life Expectancy at Birth, Male"">Male Life Expectancy at Birth</option>
+                                    <option value = "Data.Health.Total Population">Total Population</option>
+                                    <option value = "Data.Infrastructure.Mobile Cellular Subscriptions">Mobile Cellular Subscriptions</option>
+                                    <option value = "Data.Rural Development.Agricultural Land Percent">Developement Agricultural Land Percent</option>
+                                    <option value = "Data.Rural Development.Land Area"> Development Land Area</option>
+                                    <option value = "Data.Rural Development.Rural Population">Development Rural Population</option>
+                                </select>
+                            </div>
+
+                            <!--Region-->
+                            <div class = "col">
+                                <label class = "form-label" >Region: </label>
+                                <div class="dropdown">
+                                    <button type="button" style = "width:100%" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Region
+                                    </button>
+                                    <ul class="dropdown-menu checkbox-menu allow-focus" onchange= "drawLineChart()" style ="border: 1px solid blue;">
+                                        <li> <label><input class="form-check-input" type="checkbox" checked="checked" value ="South Asia"> South Asia</label></li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="Europe & Central Asia"> Europe & Central Asia</label></li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="Middle East & North Africa"> Middle East & North Africa</li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="Sub-Saharan Africa"> Sub-Saharan Africa</label></li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="Latin America & Caribbean"> Latin America & Caribbean</label></li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="East Asia & Pacific"> East Asia & Pacific</label></li>
+                                        <li> <label><input class="form-check-input" type="checkbox" value ="North America" > North America</label></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><button style = "width:100%" type = "button" class="btn btn-outline-primary" value = "SelectAll" onclick = checkAll(true)>Select All</button></li>
+                                        <li><button style = "width:100%" type = "button" class="btn btn-outline-danger" value = "DeselectAll" onclick = checkAll(false)>Deselect All</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- play btns -->
+                            <div class = "col" >
+                                <label class = "form-label">Animate: </label>
+                                <button type="button" style = "width:100%" class="btn btn-danger" id = "playBtn" style = "margin:auto;">Play</button>
+                            </div>
+
+                            <!-- opacity slider -->
+                            <div class = "col" >
+                                <label for = "opacity" class = "form-label">Opacity: </label>
+                                <input type="range" class= "form-range" min="20" max="100" step="1"  value ="100" id="opacity" oninput="opacity(this.value)"/>
+                                <output id="opacity">100%</output>
+                            </div>
+
+                            <!-- label changes -->
+                            <div class = "col">
+                                <label>Label: </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioBtn" id="exampleRadios1" value="text" checked onclick = drawLineChart()>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                      Text Label
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioBtn" id="exampleRadios2" value="flag" onclick = drawLineChart()>
+                                    <label class="form-check-label" for="exampleRadios2">
+                                     Flag Label
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- years changer -->
+                            <div class = "col">
+                                <div class="input-group">
+                                    <span class="input-group-text" style=" margin:auto">Start and end years</span>
+                                    <input style = "border: 1px solid black;width:50%" type="text" id= "startYear" placeholder= "Start Year" value = 1980 class="form-control">
+                                    <input style = "border: 1px solid black;width:50%" type="text" id = "endYear" placeholder= "End Year" value= 2013 class="form-control">
+                                    <button style = "width:100%" type = "button" class="btn btn-warning" value = "Apply" onclick = drawLineChart() >Apply</button>
+                                    <label class = "form-label" >*Please pick start and end years between 1980 to 2013 </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class = "col-10" >
+                        <svg id="line_chart"></svg>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>   
+    <script src="main.js"></script>
+    </html>
