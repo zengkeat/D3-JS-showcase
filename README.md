@@ -13,4 +13,4 @@ This repository have total of seven D3 js projects, each projects have different
 ## Step 2:
   - Download the extension called "Live Server" by Ritwick Dey on your Visual Studio code
 ## Step 2:
-  - Open the project folder in your Visual Studio code and right-click on the index.html file and click "Open with Live Server" and you should see th result on your web browser
+  - Open the project folder in your Visual Studio code and right-click on the index.html file and pick "Open with Live Server". You should see the output on your web browser.
